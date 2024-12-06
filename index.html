@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Your $650 Gift Card</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f7b733, #fc4a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .landing-container {
+      max-width: 350px;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+    }
+
+    .menu-icon a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .landing-image img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .claim-now {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      background: #28a745;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+      }
+      100% {
+        box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+      }
+    }
+
+    .description {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .social-proof {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .countdown {
+      margin: 15px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 10px;
+      font-size: 14px;
+      animation: fadeInOut 3s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu Icon -->
+  <div class="menu-icon">
+    <div></div>
+    <div></div>
+    <div></div>
+    <a href="https://smrturl.co/a/s580b9e7f2a/3956?s1=aminur"></a>
+  </div>
+
+  <!-- Landing Page Content -->
+  <div class="landing-container">
+    <div class="landing-image">
+      <img src="https://i.ibb.co/GF23WdH/be94ac378442.jpg" alt="Gift Card">
+    </div>
+    <a class="claim-now" href="https://smrturl.co/a/s580b9e7f2a/3956?s1=aminur">Claim Now</a>
+    <div class="description">
+      Hurry! This $650 Gift Card is a limited-time offer. Secure yours now before it's too late!
+    </div>
+    <div class="countdown">
+      Offer Expires In: <span id="timer">10:00</span>
+    </div>
+    <div class="social-proof">
+      <p>4,578 people have already claimed this offer!</p>
+    </div>
+  </div>
+
+  <!-- Pop-up Notification -->
+  <div class="popup" id="popup">🎉 Jane from California just claimed this gift card!</div>
+
+  <script>
+    // Countdown Timer
+    let timer = document.getElementById('timer');
+    let time = 10 * 60; // 10 minutes in seconds
+    setInterval(() => {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      timer.innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      if (time > 0) time--;
+    }, 1000);
+
+    // Show Popup Notification
+    const popup = document.getElementById('popup');
+    setInterval(() => {
+      popup.style.display = 'block';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000);
+    }, 10000);
+  </script>
+</body>
+</html>
